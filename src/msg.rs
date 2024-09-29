@@ -1,6 +1,6 @@
 use cosmwasm_schema::{cw_serde, QueryResponses};
 
-use crate::state::models::Config;
+use crate::{models::Coord, responses::ConfigResponse, state::models::Config};
 
 #[cw_serde]
 pub struct InstantiateMsg {}
@@ -9,6 +9,7 @@ pub struct InstantiateMsg {}
 #[derive(cw_orch::ExecuteFns)]
 pub enum ExecuteMsg {
     SetConfig(Config),
+    Buy(BuyMsg),
 }
 
 #[cw_serde]
@@ -22,4 +23,6 @@ pub enum QueryMsg {
 pub struct MigrateMsg {}
 
 #[cw_serde]
-pub struct ConfigResponse(pub Config);
+pub struct BuyMsg {
+    pub coord: Coord,
+}

@@ -3,9 +3,12 @@ pub mod contract;
 pub mod error;
 #[cfg(not(feature = "library"))]
 pub mod execute;
+mod math;
+pub mod models;
 pub mod msg;
 #[cfg(not(feature = "library"))]
 pub mod query;
+pub mod responses;
 pub mod state;
 
 #[cfg(not(target_arch = "wasm32"))]

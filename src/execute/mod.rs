@@ -1,3 +1,4 @@
+pub mod buy;
 pub mod set_config;
 
 use cosmwasm_std::{DepsMut, Env, MessageInfo};
